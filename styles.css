@@ -1,0 +1,158 @@
+/*****
+* General layout
+******/
+.block_my_day_buttons {
+    border: 0 none !important;
+    padding-top: 4px;
+}
+.block_my_day_buttons .card-title {
+    display: none;
+}
+.block_my_day_buttons.block_with_controls .card-title {
+    display: block;
+}
+.block_my_day_buttons .card-body {
+    padding: 0 !important;
+}
+.block_my_day_buttons .isloading {
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+.block_my_day_buttons .my-day-buttons {
+    overflow: hidden;
+}
+.block_my_day_buttons .courses {
+    float: left;
+}
+.block_my_day_buttons .course {
+    float: left;
+    min-width: 220px;
+    padding: 0 15px 15px 0;
+    clear: both;
+}
+.block_my_day_buttons .view-small .course {
+    width: 50%;
+    min-width: 0;
+}
+.block_my_day_buttons .periods {
+    float: left;
+    padding: 0 15px 15px 0;
+}
+.block_my_day_buttons .view-small .periods {
+    width: 50%;
+}
+.block_my_day_buttons .course a {
+    display: block;
+    position: relative;
+}
+.block_my_day_buttons .course a .courseimage {
+    display: block;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-color: #79868F;
+    background-position: center;
+    background-size: cover;
+}
+.block_my_day_buttons .course a .course-info {
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-weight: 600;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+}
+.block_my_day_buttons .periods h4 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+}
+.block_my_day_buttons .period {
+    padding: 3px 0;
+    border-bottom: 1px solid #ddd;
+}
+.block_my_day_buttons .period span:after {
+    content: "•";
+    margin: 0 5px;
+    color: #aaa;
+}
+.block_my_day_buttons .period span:last-of-type:after {
+    display: none;
+}
+.block_my_day_buttons .period .teacherphoto {
+    display: inline-block;
+}
+.block_my_day_buttons .period .teacherphoto img {
+    border-radius: 50%;
+}
+.block_my_day_buttons .nav{
+    float: left;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+.block_my_day_buttons .aday{
+    float: left;
+}
+.block_my_day_buttons .activitytitle{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.periods.noperiod  {
+    margin-top: -10PX;
+}
+.period.text-truncate {
+    width: fit-content;
+}
+.block_my_day_buttons .timetable-controls {
+    margin-top: 10px;
+    text-align: left;
+}
+a.timetable-prev {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+a.timetable-next {
+    margin-right: 10px;
+}
+.block_my_day_buttons .spinner {
+    display: none;
+    bottom: -3px;
+    position: relative;
+    padding-right: 5px;
+}
+.block_my_day_buttons .fetchingdata .spinner {
+    display: inline-block;
+}
+.block_my_day_buttons .spinner .circle {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-top-color: #000;
+    border-left-color: #000;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.block_my_day_buttons .spinner .spin {
+    -webkit-animation: spin 0.4s linear 0s infinite;
+    -moz-animation: spin 0.4s linear 0s infinite;
+    -o-animation: spin 0.4s linear 0s infinite;
+    animation: spin 0.4s linear 0s infinite;
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
