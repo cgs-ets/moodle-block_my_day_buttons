@@ -31,8 +31,8 @@ $addons = array(
                     'class' => 'block_my_day_buttons'
                 ),
                 'styles' => [
-                    'url' => $CFG->wwwroot . '/blocks/my_day_buttons/mobileapp.css?v=2020091601',
-                    'version' => 2020091601
+                    'url' => $CFG->wwwroot . '/blocks/my_day_buttons/mobileapp.css?v=2020092300',
+                    'version' => 2020092300
                 ],
                 'delegate' => 'CoreBlockDelegate', // Delegate (where to display the link to the add-on)
                 'method' => 'timetable_view', // Main function in \block_my_day_buttons\output\mobile
