@@ -130,20 +130,10 @@ class course_exporter extends exporter {
                     $file->get_filearea() . $file->get_filepath() . $file->get_filename()
                 ];
                 $path = implode('/', $pathcomponents);
-                $imageurl = (new moodle_url($path))->out();
-
-                $imagetokenised = moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), $file->get_filearea(),
-                $file->get_itemid(), $file->get_filepath(), $file->get_filename(), false, true);
-                /*$imagetokenised = file_rewrite_pluginfile_urls(
-                    '@@PLUGINFILE@@/' . $file->get_filename(),
-                    'pluginfile.php', 
-                    $file->get_contextid(),
-                    $file->get_component(),
-                    $file->get_filearea(), 
-                    null,
-                    array('includetoken' => true)
-                );*/
-                return array($imageurl, $imagetokenised);
+                $imageurl = new moodle_url($path);
+                $imagetokenised = moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), 
+                    $file->get_filearea(), null, $file->get_filepath(), $file->get_filename(), false, true);
+                return array($imageurl->out(), $imagetokenised->out());
             }
         }
         return array(false, false);
