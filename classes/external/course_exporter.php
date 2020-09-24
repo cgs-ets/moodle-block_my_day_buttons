@@ -104,9 +104,6 @@ class course_exporter extends exporter {
             $courseimageurl = $courseimagetokenised = $output->get_generated_image_for_id($this->data->id);
         }
 
-        
-
-
         $coursecategory = \core_course_category::get($this->data->category, MUST_EXIST, true);
         return array(
             'viewurl' => (new moodle_url('/course/view.php', array('id' => $this->data->id)))->out(false),
@@ -134,7 +131,10 @@ class course_exporter extends exporter {
                 ];
                 $path = implode('/', $pathcomponents);
                 $imageurl = (new moodle_url($path))->out();
-                $imagetokenised = file_rewrite_pluginfile_urls(
+
+                $imagetokenised = moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), $file->get_filearea(),
+                $file->get_itemid(), $file->get_filepath(), $file->get_filename(), false, true);
+                /*$imagetokenised = file_rewrite_pluginfile_urls(
                     '@@PLUGINFILE@@/' . $file->get_filename(),
                     'pluginfile.php', 
                     $file->get_contextid(),
@@ -142,7 +142,7 @@ class course_exporter extends exporter {
                     $file->get_filearea(), 
                     null,
                     array('includetoken' => true)
-                );
+                );*/
                 return array($imageurl, $imagetokenised);
             }
         }

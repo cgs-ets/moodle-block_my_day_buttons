@@ -5,6 +5,7 @@
     border: 0 none !important;
     padding-top: 4px;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 .block_my_day_buttons .card-title {
     display: none;
