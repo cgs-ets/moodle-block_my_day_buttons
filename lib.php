@@ -231,8 +231,7 @@ function myday_navigate_timetable($timetableuser, $nav, $date, $instanceid) {
 
         $timetabledata = array($props, $relateds);
     } catch (Exception $ex) {
-        //echo $ex->getMessage(); exit;
-        throw new Exception($ex->getMessage());
+        //throw new Exception($ex->getMessage());
     }
     return $timetabledata;
 }
