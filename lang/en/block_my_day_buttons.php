@@ -52,6 +52,7 @@ $string['periodsectiontitle'] = 'Period section title';
 $string['periodsectiontitle_default'] = 'What\'s On';
 $string['coursecategories'] = 'Course Categories';
 $string['coursecategories_desc'] = 'ID numbers of categories to look at for course buttons (csv).';
+$string['excludecourses'] = 'Courses in Moodle to exclude (csv)';
 $string['endofday'] = 'End of day';
 $string['endofday_desc'] = '(E.g. 1530)';
 $string['noactivitytitle'] = 'No specialist activity title';

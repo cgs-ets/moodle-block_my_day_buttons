@@ -63,6 +63,7 @@
         $settings->add(new admin_setting_configtext('block_my_day_buttons/staffroles', get_string('staffroles', 'block_my_day_buttons'), get_string('staffroles_desc', 'block_my_day_buttons'), ''));
 
         $settings->add(new admin_setting_configtext('block_my_day_buttons/coursecategories', get_string('coursecategories', 'block_my_day_buttons'), get_string('coursecategories_desc', 'block_my_day_buttons'), ''));
+        $settings->add(new admin_setting_configtext('block_my_day_buttons/excludecourses', get_string('excludecourses', 'block_my_day_buttons'), '', ''));
 
         $settings->add(new admin_setting_configtext('block_my_day_buttons/periodsectiontitle', get_string('periodsectiontitle', 'block_my_day_buttons'), '', get_string('periodsectiontitle_default', 'block_my_day_buttons')));
 

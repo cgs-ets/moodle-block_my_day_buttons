@@ -212,6 +212,13 @@ function myday_navigate_timetable($timetableuser, $nav, $date, $instanceid) {
             });
         }
 
+        if ($config->excludecourses) {
+            $excludecourses = explode(',', $config->excludecourses);
+            $coursesdata = array_filter($coursesdata, function($course) use ($excludecourses) {
+                return !in_array($course->idnumber, $excludecourses);
+            });
+        }
+
         $props = (object) [
             'instanceid' => $instanceid,
             'periodstitle' => $config->periodsectiontitle,
