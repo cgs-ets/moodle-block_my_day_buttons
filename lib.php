@@ -125,7 +125,7 @@ function myday_init_timetable($instanceid) {
     //Get the day depending on the time. End of day, End of week or current day.
     $date = date('Y-m-d', time());
 
-     // $date = '2026-02-28'; // Saturday
+    // $date = '2026-04-03'; // Good Friday - long weekend
     // Check if it is the end of the day.
     $endofday = new DateTime($config->endofday);
     $current_time = new DateTime('now');
@@ -188,7 +188,20 @@ function myday_navigate_timetable($timetableuser, $nav, $date, $instanceid) {
             'date' => $date,
         );
 
-        $timetabledata = $externalDB->get_records_sql($sql, $params);
+        // $timetabledata = $externalDB->get_records_sql($sql, $params);
+         // If data is empty on initial load (e.g. public holiday), look ahead for next available day.
+        if ($nav == -1 && empty($timetabledata)) {
+            $days = 0;
+            while(empty($timetabledata) && $days <= 30) {
+                $days++;
+                $date = utils::get_next_day($date);
+                $params = array(
+                    'id' => $timetableuser->username,
+                    'date' => $date,
+                );
+                $timetabledata = $externalDB->get_records_sql($sql, $params);
+            }
+        }
 
         // If data is empty and attempting to navigate cal, look for next available timetable day.
         if ($nav == 0 || $nav == 1) {
