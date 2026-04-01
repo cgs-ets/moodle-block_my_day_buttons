@@ -188,7 +188,7 @@ function myday_navigate_timetable($timetableuser, $nav, $date, $instanceid) {
             'date' => $date,
         );
 
-        // $timetabledata = $externalDB->get_records_sql($sql, $params);
+        $timetabledata = $externalDB->get_records_sql($sql, $params);
          // If data is empty on initial load (e.g. public holiday), look ahead for next available day.
         if ($nav == -1 && empty($timetabledata)) {
             $days = 0;
